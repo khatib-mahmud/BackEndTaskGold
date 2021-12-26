@@ -22,8 +22,9 @@
                 {% csrf_token %} 
                 {% for form in form %}
                 {{form.errors}}
-                {{form.label_tag}}
+                <!-- {{form.label_tag}} -->
                 {% render_field form class="form-control" %}
+                <br>
                 {% endfor %}  
                 <br>
                 <input class="btn btn-primary Btn" type="submit" value="Submit">    
