@@ -1,0 +1,26 @@
+{% extends 'index.html' %}
+
+{% block body %}
+<style>
+    .updateBtn {
+
+        text-align: center;
+    }
+</style>
+<h1 style="text-align: center;">Delete Mobile</h1>
+<hr>
+<div id="info" class=" container">
+ 
+<p>Are you sure you want to delete?</p>
+<form action="{% url 'mobiledelete' mobile.id %}" method="post">
+    {% csrf_token %}
+
+    <a class="btn btn-primary" href="{% url 'mobile_list' %}">Cancel</a>
+    <input class="btn btn-outline-danger" type="submit" value="Confirm">
+</form>
+
+</div>
+
+
+
+{% endblock %}
