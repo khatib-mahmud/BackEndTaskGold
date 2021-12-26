@@ -40,7 +40,25 @@
           </div>
         </div>
       </nav>
-
+      <script type="text/javascript">
+        $('#dropdown-btn').on('change', function () {
+    
+            var frm = $('#year-form');
+            $.ajax({
+                type: frm.attr('method'),
+                url: "{% url 'home' %}",
+                data: frm.serialize(),
+                success: function (data) {
+                    console.log('success')
+                    $(graph).html(data)
+                },
+                error: function (data) {
+                    $("#message").html("Something went wrong!");
+                }
+            });
+        });
+    
+    </script>
      
 {% block body %}
 <h1>HOME</h1>
