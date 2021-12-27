@@ -13,7 +13,7 @@ class MobileForm(forms.ModelForm):
             
             'Color': forms.TextInput(attrs={'class':'form-control', 'placeholder':'Color','pattern':'[^0-9]+','title':'No numbers'}),
             
-            'JAN_Code': forms.TextInput(attrs={'class':'form-control', 'placeholder':'Code','title':'only distinct Code'}),
+            'JAN_Code': forms.TextInput(attrs={'class':'form-control', 'placeholder':'JAN Code','title':'only distinct Code'}),
 
             
         }

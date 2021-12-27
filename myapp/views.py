@@ -10,7 +10,7 @@ def home(request):
     return render(request, 'index.html', {})
 
 def mobile_list(request):
-    mobile_list = Mobile.objects.all()
+    mobile_list = Mobile.objects.order_by('Brand_Name')
     
     myFilter = MobileFilter(request.GET,queryset=mobile_list)  
     mobile_list = myFilter.qs
@@ -21,7 +21,7 @@ def mobile_list(request):
 def addmobile(request):
     form = MobileForm()
     if request.method == "POST":
-        form = MobileForm(request.POST)
+        
 
         JAN_Code = request.POST.get('JAN_Code')
         
